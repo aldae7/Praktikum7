@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int iteratif(int suku, int a, int b, int c){
+    a = 1, b = 0;
+
+    if (suku == 1) return b;
+    if (suku == 0) return a;
+
+    else {
+        for (int i=2; i<=suku; i++){
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return c;
+    }
+}
+
+int main(){
+    int suku, a, b,c;
+
+    cout << "PROGRAM FIBBONACCI MENGGUNAKAN FUNGSI ITERATIF" << endl;
+    cout << "Masukkan niali ke- : "; cin >> suku;
+    cout << "\nBilangan fibonaccinya untuk " << suku << "adalah";
+    cout << iteratif(suku, a, b, c);
+    return 0;
+}
